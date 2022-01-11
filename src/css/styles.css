@@ -1,0 +1,69 @@
+body {
+    padding: 0;
+    background-color: #000000;
+}
+
+.main {
+    padding: 4% 3% 3%;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 540px;
+    max-width: 1000px;
+    background: repeating-linear-gradient(
+            -45deg,
+            #FFFFFF 0, #FFFFFF 8px,
+            #FFAEC6 8px, #FFAEC6 10px,
+            #FF869C 10px, #FF869C 12px,
+            #FF516B 12px, #FF516B 14px,
+            #FF869C 14px, #FF869C 16px,
+            #FFAEC6 16px, #FFAEC6 18px,
+            #FFFFFF 18px, #FFFFFF 26px,
+            #A5CFF7 26px, #A5CFF7 28px,
+            #A5B6F7 28px, #A5B6F7 30px,
+            #7BA6DE 30px, #7BA6DE 32px,
+            #A5B6F7 32px, #A5B6F7 34px,
+            #A5CFF7 34px, #A5CFF7 36px
+    );
+}
+
+.container {
+    padding: 2%;
+    background-color: #39207B;
+    border-top: 1.2em solid #10004A;
+    border-left: 1.2em solid #10004A;
+}
+
+.legals {
+    color: #BBBBBB;
+    text-align: center;
+}
+
+.turn {
+    font-family: "Consolas", "Calibri", "Helvetica", "serif";
+    color: #FFFFFF;
+    text-align: right;
+    margin-right: 3%;
+    font-weight: bold;
+}
+
+.card {
+    display: inline-block;
+    width: 10%;
+    margin: 3%;
+}
+
+.img {
+    display: block;
+    width: 100%;
+
+    cursor: pointer;
+    box-shadow: 10px 8px #10004A;
+}
+
+.img:hover {
+    box-shadow: 0 0 0 5px rgb(57, 32, 123),
+    0 0 0 10px rgb(214, 0, 0),
+    0 0 0 16px rgb(255, 48, 49),
+    0 0 0 21px rgb(255, 113, 115),
+    0 0 0 27px rgb(214, 0, 0);
+}
