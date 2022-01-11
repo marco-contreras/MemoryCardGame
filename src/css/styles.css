@@ -60,10 +60,18 @@ body {
     box-shadow: 10px 8px #10004A;
 }
 
-.img:hover {
+.img-focus {
     box-shadow: 0 0 0 5px rgb(57, 32, 123),
     0 0 0 10px rgb(214, 0, 0),
     0 0 0 16px rgb(255, 48, 49),
     0 0 0 21px rgb(255, 113, 115),
     0 0 0 27px rgb(214, 0, 0);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.disabled:hover {
+    cursor: no-drop;
 }
