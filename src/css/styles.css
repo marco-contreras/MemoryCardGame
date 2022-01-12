@@ -1,6 +1,7 @@
 body {
     padding: 0;
     background-color: #000000;
+    font-family: "Consolas", "Calibri", "Helvetica", "serif";
 }
 
 .main {
@@ -28,9 +29,28 @@ body {
 
 .container {
     padding: 2%;
+    position: relative;
     background-color: #39207B;
     border-top: 1.2em solid #10004A;
     border-left: 1.2em solid #10004A;
+}
+
+.blocker {
+    width: 102%;
+    height: 102%;
+    top: -2%;
+    left: -2%;
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    background-color: #000000CC;
+}
+
+.blocker p {
+    color: #FFFFFF;
+    font-size: 3vw;
+    font-weight: bold;
+    padding-top: 2%;
 }
 
 .legals {
@@ -38,8 +58,7 @@ body {
     text-align: center;
 }
 
-.turn {
-    font-family: "Consolas", "Calibri", "Helvetica", "serif";
+.turn-message {
     color: #FFFFFF;
     text-align: right;
     margin-right: 3%;
@@ -68,10 +87,32 @@ body {
     0 0 0 27px rgb(214, 0, 0);
 }
 
+.button-restart {
+    margin-top: -3%;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: #249B47;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+
+.button-restart svg {
+    width: 2vw;
+    height: 2vw;
+}
+
 .disabled {
     opacity: 0.5;
 }
 
 .disabled:hover {
     cursor: no-drop;
+}
+
+.hide {
+    display: none;
 }

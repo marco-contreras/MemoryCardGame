@@ -1,19 +1,26 @@
 import {Asset} from "./asset.class";
+import {Icon} from "./icon.class";
 
 export class Canvas {
     #board;
+    #blocker;
     #cardsSection;
     #cardsReferences;
-    #spanTurn;
+    #spansTurn;
+    #iconSpanWrapper;
 
     constructor(board) {
         this.#board = board;
+        this.#blocker = document.querySelector('.blocker');
         this.#cardsSection = document.querySelector('.cards');
-        this.#spanTurn = document.querySelector('#turn');
+        this.#spansTurn = document.querySelectorAll('.turn');
+        this.#iconSpanWrapper = document.querySelector('#icon-wrapper');
         this.#cardsReferences = [];
     }
 
     drawBoard = () => {
+        this.#cardsSection.innerHTML = '';
+
         for (const i in this.#board) {
             const tmpDiv = document.createElement('div');
             tmpDiv.innerHTML = `<div class="card"><img class="img" id="c${i}" src="${Asset.getAssetSrc('0')}" alt="card"></div>`;
@@ -21,6 +28,10 @@ export class Canvas {
             this.#cardsSection.append(tmpDiv.firstChild);
             this.#cardsReferences.push(this.#cardsSection.lastChild.firstChild);
         }
+
+        this.#iconSpanWrapper.innerHTML = '';
+        this.#iconSpanWrapper.append(Icon.getIcon('undo-alt'));
+        this.#blocker.classList.add('hide');
     }
 
     showCard = (id) => {
@@ -36,7 +47,7 @@ export class Canvas {
     }
 
     refreshTurn = (turn) => {
-        this.#spanTurn.innerHTML = turn;
+        this.#spansTurn.forEach(spanTurn => spanTurn.innerHTML = turn);
     }
 
     refreshFocus(id) {
@@ -47,5 +58,9 @@ export class Canvas {
         if (id && !this.#cardsReferences[id].classList.contains('disabled')) {
             this.#cardsReferences[id].classList.add('img-focus');
         }
+    }
+
+    blockBoard() {
+        this.#blocker.classList.remove('hide');
     }
 }

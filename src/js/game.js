@@ -1,4 +1,5 @@
 import {Canvas} from "../classes/canvas";
+import {Board} from "../classes/board.class";
 
 export class Game {
     static #canvas;
@@ -8,11 +9,11 @@ export class Game {
     static #turn;
     static #gameActive;
 
-    static run(board) {
-        this.#board = board;
+    static run() {
+        this.#board = Board.getNewBoard;
         this.#turn = 0;
         this.#gameActive = true;
-        Game.#startNewGame(board);
+        Game.#startNewGame(this.#board);
     }
 
     static #startNewGame = (board) => {
@@ -58,7 +59,7 @@ export class Game {
             this.#activeCardId = null;
             this.#gameActive = true;
             this.refreshFocus(this.#focusCardId);
-        }, 1000);
+        }, 800);
     }
 
     static refreshFocus(id) {
@@ -73,9 +74,7 @@ export class Game {
         const pendingCards = this.#board.filter(element => element > 0);
 
         if (pendingCards.length === 0) {
-            setTimeout(() => {
-                alert(`You win!!! You finished at ${this.#turn} intents`);
-            }, 200);
+            this.#canvas.blockBoard();
         }
     }
 }
